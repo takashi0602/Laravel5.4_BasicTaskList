@@ -1,11 +1,11 @@
 <?php
 
-/** Show Task Dashbord **/
+/** Show Task Dashboard **/
 Route::get('/', function() {
 	$tasks = \App\Task::orderBy('created_at', 'asc')->get();
 
 	return view('task', [
-		'tasks' => $tasks	// このデータがtask.blade.phpで使えるようになる
+		'tasks' => $tasks
 	]);
 });
 

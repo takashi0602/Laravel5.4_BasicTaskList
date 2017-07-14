@@ -1,5 +1,3 @@
-<!-- resources/views/tasks.blade.php -->
-
 @extends('layouts.app')
 
 @section('content')
@@ -31,13 +29,13 @@
             </div>
         </form>
 	</div>
+
 	<!-- Current Tasks -->
     @if (count($tasks) > 0)
         <div class="panel panel-default">
             <div class="panel-heading">
                 Current Tasks
             </div>
-
             <div class="panel-body">
                 <table class="table table-striped task-table">
 
@@ -53,10 +51,12 @@
                     <tbody>
                     	@foreach ($tasks as $task)
                         	<tr>
+
     							<!-- Task Name -->
     							<td class="table-text">
         							<div>{{ $task->name }}</div>
     							</td>
+
     							<!-- Delete Button -->
     							<td>
         							<form action="{{ url('task/'.$task->id) }}" method="POST">
